@@ -13,6 +13,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 @Entity
 public class Employe implements Serializable{
 	@Id
@@ -37,12 +40,15 @@ public class Employe implements Serializable{
 	public void setNomEmploye(String nomEmploye) {
 		this.nomEmploye = nomEmploye;
 	}
+	@JsonIgnore
 	public Employe getEmployeSup() {
 		return employeSup;
 	}
+	@JsonSetter
 	public void setEmployeSup(Employe employeSup) {
 		this.employeSup = employeSup;
 	}
+	@JsonIgnore
 	public Collection<Groupe> getGroupes() {
 		return groupes;
 	}

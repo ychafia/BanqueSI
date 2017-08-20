@@ -16,11 +16,11 @@ public class ClientRestService {
 	@Autowired
 	private ClientMetier clientMetier;
 
-	@RequestMapping(value="/clients", method=RequestMethod.POST)
+	@RequestMapping(value="/BanqueSI/clients", method=RequestMethod.POST)
 	public Client saveClient(@RequestBody Client clt) {
 		return clientMetier.saveClient(clt);
 	}
-	@RequestMapping(value="/clients", method=RequestMethod.GET)
+	@RequestMapping(value="/BanqueSI/clients", method=RequestMethod.GET)
 	public List<Client> listClient() {
 		return clientMetier.listClient();
 	}
